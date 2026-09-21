@@ -1,7 +1,7 @@
 package ru.netology.service;
 
-import org.testng.annotations.Test;
-import org.testng.Assert;
+import org.junit.Test;
+import org.junit.Assert;
 
 public class CashbackHackServiceTest {
 
@@ -12,7 +12,7 @@ public class CashbackHackServiceTest {
         int expected = 100;
         int actual = service.remain(amount);
 
-        Assert.assertEquals(actual, expected, "Сумма для докупки рассчитана неверно");
+        Assert.assertEquals("Сумма для докупки рассчитана неверно", expected, actual);
     }
 
     @Test
@@ -22,7 +22,7 @@ public class CashbackHackServiceTest {
         int expected = 100;
         int actual = service.remain(amount);
 
-        Assert.assertEquals(actual, expected, "Сумма для докупки рассчитана неверно");
+        Assert.assertEquals("Сумма для докупки рассчитана неверно", expected, actual);
     }
 
     @Test
@@ -32,7 +32,7 @@ public class CashbackHackServiceTest {
         int expected = 0;
         int actual = service.remain(amount);
 
-        Assert.assertEquals(actual, expected, "Сервис не должен советовать докупать, если сумма уже кратна 1000");
+        Assert.assertEquals("Сервис не должен советовать докупать, если сумма уже кратна 1000", expected, actual);
     }
 
     @Test
@@ -42,7 +42,7 @@ public class CashbackHackServiceTest {
         int expected = 544;
         int actual = service.remain(amount);
 
-        Assert.assertEquals(actual, expected, "Сумма для докупки рассчитана неверно");
+        Assert.assertEquals("Сумма для докупки рассчитана неверно", expected, actual);
     }
 
     @Test
@@ -52,6 +52,6 @@ public class CashbackHackServiceTest {
         int expected = 1000;
         int actual = service.remain(amount);
 
-        Assert.assertEquals(actual, expected, "Для нулевой суммы сервис должен советовать докупить на 1000");
+        Assert.assertEquals("Для нулевой суммы сервис должен советовать докупить на 1000", expected, actual);
     }
 }
